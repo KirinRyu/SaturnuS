@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 
+
 </script>
 
 <template>
-  <nav>
-
-  </nav>
 
   <HomePage />
   <RouterView />
