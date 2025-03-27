@@ -16,6 +16,11 @@ export default defineConfigWithVueTs(
     name: 'app/files-to-ignore',
     ignores: ['**/dist/**', '**/dist-ssr/**', '**/coverage/**'],
   },
+  {
+    rules: {
+      'typescript-eslint/no-unused-vars' : 'off'
+    },
+  },
 
   pluginVue.configs['flat/essential'],
   vueTsConfigs.recommended,

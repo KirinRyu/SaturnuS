@@ -13,9 +13,13 @@ const closeWalletModal = () => {
 </script>
 
 <template>
-    <div class="">
+    <div class="relative justify-center">
         <div class="flex items-center">
-            <h1>Logo</h1>
+            <img 
+             src="@/assets/img/saturno-logo.png" 
+             alt="Saturno (logo)"
+             class="relative w-lg"
+             >
         </div>
 
         <div>
