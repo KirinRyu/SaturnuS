@@ -6,6 +6,7 @@ import exodusImg from '@/assets/img/imgOptions/exodus.png'
 import { ref } from 'vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
+import { onClickOutside } from '@vueuse/core';
 
 const props = defineProps({
     walletOpen: Boolean,
@@ -18,6 +19,10 @@ type Opcao = {
     nome: string,
     site: string
 }
+
+// Será usado para fechar a tela ao clicar fora do Modal
+const walletModal = ref()
+onClickOutside(walletModal, () => props.closeWalletModal())
 
 const dropdown = ref<boolean>(false)
 const selectedOption = ref<Opcao | undefined>()
@@ -57,7 +62,6 @@ const connectWallet = () => {
         window.open(selectedOption.value.site, '_blank')
     }
 }
-
 </script>
 
 <template>
@@ -75,6 +79,7 @@ const connectWallet = () => {
          bg-purple-900
          shadow-lg shadow-black
         "
+        ref="walletModal"
         >
             <h2 class="text-[180%] text-center font-serif text-white !font-bold">Conecte sua Carteira</h2>
             
@@ -131,7 +136,7 @@ const connectWallet = () => {
             <div class="flex gap-10 text-center justify-center !mt-6">
                 <span class="
                  cursor-pointer
-                 w-50 h-10
+                 w-60 h-10
                  text-[110%]
                  bg-gray-400 p-2 
                  rounded-lg ring-1 ring-black-500/100
