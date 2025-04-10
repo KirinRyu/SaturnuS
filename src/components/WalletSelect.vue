@@ -132,29 +132,18 @@ const connectWallet = () => {
                 </ul>
             </div>
 
-            <!--BOTÕES DE CONFIRMAR / CANCELAR-->
+            <!--BOTÃO DE CONFIRMAR-->
             <div class="flex gap-10 text-center justify-center !mt-6">
                 <span class="
                  cursor-pointer
                  w-60 h-10
                  text-[110%]
                  bg-gray-400 p-2 
-                 rounded-lg ring-1 ring-black-500/100
+                 rounded-4xl ring-1 ring-black-500/100
                  hover:bg-blue-600 hover:text-white hover:!font-bold transition duration-300
                 "
                 @click="connectWallet()"
                 >Conectar</span>
-
-                <span class="
-                 cursor-pointer
-                 w-30 h-10 p-2
-                 text-[110%]
-                 bg-red-500
-                 rounded-lg ring-1 ring-black-500/100
-                 hover:bg-red-600 hover:text-white hover:!font-bold transition duration-300
-                "
-                 @click="props.closeWalletModal?.()"
-                >Cancelar</span>
             </div>
             
         </div>
