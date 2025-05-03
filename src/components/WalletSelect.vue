@@ -76,7 +76,7 @@ const connectWallet = () => {
          relative max-w-110 w-full
          px-5 py-10
          rounded-md
-         bg-purple-900
+         bg-[#04335e]
          shadow-lg shadow-black
         "
         ref="walletModal"
@@ -120,6 +120,7 @@ const connectWallet = () => {
                      relative w-100 h-10
                    bg-gray-300 text-black/85
                    hover:bg-white hover:text-black/110 transition duration-300 
+                     last:rounded-b-md
                      "
                      @click="selectOption(opcao)"
                     >

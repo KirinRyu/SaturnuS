@@ -48,8 +48,8 @@ const closeWalletModal = () => {
         class="
           block w-full max-w-50 h-15
           !font-bold !text-center text-lg p-4 cursor-pointer
-        text-white rounded-4xl bg-purple-500/75 ring-2 ring-purple-500/60
-        hover:bg-purple-600/75 transition duration-300 ease-in-out
+        text-white rounded-4xl bg-[#04335ee5] ring ring-white
+        hover:bg-[#004e72] transition duration-300 ease-in-out
         "
         >
         Conectar Carteira
