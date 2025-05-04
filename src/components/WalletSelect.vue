@@ -81,7 +81,12 @@ const connectWallet = () => {
         "
         ref="walletModal"
         >
-            <h2 class="text-[180%] text-center font-serif text-white !font-bold">Conecte sua Carteira</h2>
+            <h2 class="text-[190%] text-center font-Arial text-white !font-bold
+             mb-3!">Conecte sua Carteira</h2>
+            
+            <hr
+             class="rounded-lg text-[#6060609f]"
+            >
             
             <!--DROPDOWN DE SELEÇÃO-->
             <div class="

@@ -7,9 +7,7 @@ import NavBar from './components/NavBar.vue';
 
   A partir do momento que a pessoa conectar sua carteira no site, 
   não precisa de mais nada pra comprar tokens.
-
-  algebra linear!!!
-  gradiente -> vetor tangencial
+  
 */
 </script>
 
@@ -17,6 +15,23 @@ import NavBar from './components/NavBar.vue';
   
   <NavBar />
 
-  <RouterView />
-
+  <Transition
+   name="fade"
+  >
+    <RouterView />
+  </Transition>
 </template>
+
+<style> 
+.fade-enter-active, .fade-leave-active { 
+  transition: opacity 0.3s ease-in; 
+}
+
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-to, .fade-leave-from {
+  opacity: 1;
+}
+</style>
