@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
+import NavBar from './components/NavBar.vue';
 
 /*
   Focar no Operacional, ou seja, criar os produtos e toda a interface de e-commerce.
@@ -13,6 +14,8 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
+  
+  <NavBar />
 
   <RouterView />
 

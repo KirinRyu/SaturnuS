@@ -19,7 +19,7 @@ const closeWalletModal = () => {
    class=" 
    relative flex flex-col items-center 
    min-h-screen min-w-screen bg-[#453A62]
-   p-9
+   p-9 pt-[75px]
    ">
 
     <div class="flex items-center !my-8">
