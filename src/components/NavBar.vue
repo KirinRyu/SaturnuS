@@ -23,6 +23,7 @@
                 <router-link
                  to="/"
                  class="opcaoNav"
+                 active-class="opcaoNavAtiva"
                 >
                     Home
                 </router-link>
@@ -31,6 +32,7 @@
                 <router-link
                  to="/shop"
                  class="opcaoNav"
+                 active-class="opcaoNavAtiva"
                 >
                     Loja
                 </router-link>
@@ -42,6 +44,7 @@
         ">
             <router-link
              to="/carrinho"
+             active-class="opcaoNavAtiva"
             >
                 <font-awesome-icon icon="cart-shopping"
                 class="text-lg cursor-pointer
@@ -52,12 +55,16 @@
                 />
             </router-link>
 
-            <img src="../assets/img/venerius-navbar.png" 
-             class="w-9 h-auto cursor-pointer 
-             relative rounded-[100%]
-             hover:shadow-lg shadow-[#453a628a] 
-             transition-all duration-300"
+            <router-link
+             to="/tokens"
             >
+                <img src="../assets/img/venerius-navbar.png" 
+                class="w-9 h-auto cursor-pointer 
+                relative rounded-[100%]
+                hover:shadow-lg shadow-[#453a628a] 
+                transition-all duration-300"
+                >
+            </router-link>
         </div>
         <!--Img do Token e Icone do carrinho-->
     </div>
@@ -66,7 +73,7 @@
 <style scoped>
 .opcaoNav {
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 8px;
     padding: 8px;
     width: 100px !important;
     text-decoration-line: underline;
@@ -76,5 +83,14 @@
     color: rgb(255, 255, 255);
     background-color: #6c5d96e1;
     transition: ease all 0.3s;
+}
+
+.opcaoNavAtiva {
+    cursor: default;
+    background-color: #6c5d9634;
+    border-radius: 8px;
+    padding: 8px;
+    width: 100px !important;
+    text-decoration-line: underline;
 }
 </style>
