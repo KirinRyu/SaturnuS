@@ -18,29 +18,22 @@ const closeWalletModal = () => {
   <div 
    class=" 
    relative flex flex-col items-center 
-   min-h-screen min-w-screen bg-[#453A62]
+   h-screen min-w-screen bg-[#000000ee]
    p-9 pt-[75px]
    ">
 
-    <div class="flex items-center !my-8">
-      <!--Colocando um glow por tras-->
-      <img 
-        src="@/assets/img/saturno-logo.png" 
-        alt="Saturno (logo)"
-        class="absolute w-lg z-0 blur-md brightness-190 opacity-75"
-      >
-
-      <!--Imagem Original-->
-      <img 
-        src="@/assets/img/saturno-logo.png" 
-        alt="Saturno (logo)"
-        class="relative w-lg z-10"
-      >
+   <div class="relative
+    w-[100%] h-[100%]!
+    border border-indigo-600
+   "
+   >
+    <div
+     class="
+     absolute top-[50%] left-[50%]
+     "
+    >
     </div>
-
-    <h3 class="relative mb-6! brightness-120 text-[#EEEEEE] text-lg">
-      Seja Bem-Vindo(a) à SaturnuS
-    </h3>
+   </div>
   
     <div class="flex justify-center text-center">
       <button 

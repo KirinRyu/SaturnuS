@@ -7,8 +7,7 @@
      pl-5 pr-5
      fixed top-0 left-0
      h-[60px] w-full z-10
-     bg-[#F8F9FA] shadow-md shadow-[#000]/50
-     border-b border-solid border-b-[#004E72]
+     bg-transparent text-gray-50
      flex items-center
     ">
         <img src="../assets/img/saturno-logo.png" 
