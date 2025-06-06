@@ -22,16 +22,38 @@ const closeWalletModal = () => {
    p-9 pt-[75px]
    ">
 
-   <div class="relative
+   <div class="relative flex
     w-[100%] h-[100%]!
-    border border-indigo-600
+    items-center justify-center gap-10
    "
    >
     <div
      class="
-     absolute top-[50%] left-[50%]
+      relative flex
+      flex-col gap-5
+      text-start
+      w-[35%]
      "
     >
+      <h1 class="relative w-[70%]">Own the Deal. Own the Token. Own the Power.</h1>
+      <h3>From digital agreements to real transactions: explore a smarter way to trade.</h3>
+
+      <div> <!--BOTÕES-->
+
+      </div>
+
+    </div>
+
+    <div
+     class="
+     
+     "
+    >
+      <img
+       class="w-200 h-auto" 
+       src="../assets/img/Saturno sem Fundo.png" 
+       alt=""
+      >
     </div>
    </div>
   
