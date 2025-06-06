@@ -25,7 +25,7 @@
             <img src="../assets/img/venerius-navbar.png" 
             class="w-9 h-auto cursor-pointer 
             relative rounded-[100%]
-            hover:shadow-lg shadow-[#453a628a] 
+            hover:shadow-[0_0_60px_40px_#24004f]
             transition-all duration-300"
             >
         </router-link>
