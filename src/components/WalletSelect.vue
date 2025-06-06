@@ -68,7 +68,7 @@ const connectWallet = () => {
     <div class="
      fixed top-0 left-0 w-full h-full
      flex justify-center items-center
-     bg-black/65
+     bg-[#0E001F]/70
      " 
      v-if="props.walletOpen"
     >
@@ -76,17 +76,15 @@ const connectWallet = () => {
          relative max-w-110 w-full
          px-5 py-10
          rounded-md
-         bg-[#04335e]
+         bg-[#1A0033]
          shadow-lg shadow-black
+         border border-[#3C007A]
         "
         ref="walletModal"
         >
-            <h2 class="text-[190%] text-center font-Arial text-white !font-bold
-             mb-3!">Conecte sua Carteira</h2>
-            
-            <hr
-             class="rounded-lg text-[#6060609f]"
-            >
+            <h2 class="text-[190%] text-center text-white font-(DM Sans)mb-3!">
+                Conecte sua Carteira
+            </h2>
             
             <!--DROPDOWN DE SELEÇÃO-->
             <div class="
@@ -94,6 +92,7 @@ const connectWallet = () => {
             flex items-center
             relative w-100 h-10
             !mt-8 px-3.5
+            rounded-[10px]
             bg-gray-300 text-black/85
             hover:bg-white hover:text-black/110 transition duration-300 
             "
@@ -121,11 +120,10 @@ const connectWallet = () => {
                      flex items-center
                      cursor-pointer
                      text-[110%] p-1 pl-3.5
-                     border-b-1
+                     border
                      relative w-100 h-10
-                   bg-gray-300 text-black/85
-                   hover:bg-white hover:text-black/110 transition duration-300 
-                     last:rounded-b-md
+                     bg-transparent text-[#D8D8D8]
+                   hover:bg-white hover:text-black/110 transition duration-300
                      "
                      @click="selectOption(opcao)"
                     >
@@ -142,11 +140,11 @@ const connectWallet = () => {
             <div class="flex gap-10 text-center justify-center !mt-6">
                 <span class="
                  cursor-pointer
-                 w-60 h-10
+                 w-auto h-10
                  text-[110%]
-                 bg-gray-400 p-2 
-                 rounded-4xl ring-1 ring-black-500/100
-                 hover:bg-blue-600 hover:text-white hover:!font-bold transition duration-300
+                 bg-[#6B00F5] p-2 
+                 border border-[#3C007A]
+                 rounded-[10px]
                 "
                 @click="connectWallet()"
                 >Conectar</span>
