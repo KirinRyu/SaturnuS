@@ -3,9 +3,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import WalletSelect from '../components/WalletSelect.vue'
 
 onMounted(() => {
-  setTimeout(() => {
-    showGlow.value = true
-  }, 300);
+  showGlow.value = true
 })
 
 onUnmounted(() => showGlow.value = false)
@@ -27,45 +25,32 @@ const closeWalletModal = () => {
 </script>
 
 <template>
-  <Transition name="glow">
-    <div v-show="showGlow" class="
-     absolute flex
-     w-[100%] h-[100%] 
-     justify-center items-center
+  <div class="
+    absolute flex
+    w-[100%] h-[100%] 
+    justify-center items-center
+  ">
+    <div class="
+    w-[1px] h-[1px] z-1
+    rounded-full
+    shadow-[0_0_100px_100px_#240040]
     ">
-      <div class="
-      w-[1px] h-[1px] z-1
-      rounded-full
-      opacity-60 
-      shadow-[0_0_100px_300px_#1c013f]
-      ">
-        
-      </div>
     </div>
-  </Transition>
+    <div class="
+    w-[1px] h-[1px] z-1
+    rounded-full
+    opacity-60
+    shadow-[0_0_500px_700px_#240040]
+    ">
+    </div>
+  </div>
 
-  <Transition name="glow">
-    <div v-show="showGlow" class="
-     absolute flex
-     w-[100%] h-[100%] 
-     justify-center items-center
-    ">
-      <div class="
-      w-[1px] h-[1px] z-1
-      rounded-full
-      opacity-60 
-      shadow-[0_0_500px_700px_#1c013f]
-      ">
-        
-      </div>
-    </div>
-  </Transition>
 
   <div 
    class=" 
    relative flex flex-col items-center 
    h-screen min-w-screen bg-[#000000f9]
-   p-9 pt-[75px]
+   p-15 pt-[75px]
    ">
 
    <div class="relative flex
@@ -79,12 +64,39 @@ const closeWalletModal = () => {
       flex-col gap-5
       text-start
       w-[35%] z-2
+      max-[1550px]:w-[40%]
      "
     >
       <h1 class="relative w-[70%]">Own the Deal. Own the Token. Own the Power.</h1>
       <h3>From digital agreements to real transactions: explore a smarter way to trade.</h3>
 
-      <div> <!--BOTÕES-->
+      <div class="
+       flex relative 
+       z-2 
+       gap-5
+       mt-5
+      ">
+        <button
+        @click="openWalletModal"  
+        class="
+         bg-linear-to-t from-black to-purple-800/20
+         transition ease duration-300 hover:bg-linear-to-t hover:from-black hover:to-[#3c096c]
+        ">
+          Connect Wallet
+          <font-awesome-icon class="chevron" icon="chevron-right" />
+        </button>
+
+        <router-link
+          to="/shop"
+        >
+          <button class="
+           bg-linear-to-t from-black to-purple-800/20
+           transition ease duration-300 hover:bg-linear-to-t hover:from-black hover:to-[#3c096c]
+          ">
+            Shop
+            <font-awesome-icon class="chevron" icon="chevron-right" />
+          </button>
+        </router-link>
 
       </div>
 
@@ -103,20 +115,6 @@ const closeWalletModal = () => {
     </div>
    </div>
   
-    <div class="flex justify-center text-center">
-      <button 
-        @click="openWalletModal" 
-        class="
-          block w-full max-w-50 h-15
-          !font-bold !text-center text-lg p-4 cursor-pointer
-        text-white rounded-4xl bg-[#04335ee5] ring ring-white
-        hover:bg-[#004e72] transition duration-300 ease-in-out
-        "
-        >
-        Conectar Carteira
-    </button>
-    </div>
-  
     <Teleport to="#walletSelect">
       <Transition 
         enter-active-class="duration-300 ease-out"
@@ -133,18 +131,20 @@ const closeWalletModal = () => {
 </template>
 
 <style scoped>
-.glow-enter-active,
-.glow-leave-active {
-  transition: opacity ease 0.3s;
+
+button {
+  cursor: pointer;
+  padding: 12px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  min-width: 90px;
+  border-radius: 80px;
+  border: #320A5D solid 1px;
 }
 
-.glow-enter-from,
-.glow-leave-to {
-  opacity: 0;
+.chevron {
+  margin: 5px;
+  margin-bottom: 0;
 }
 
-.glow-enter-to,
-.glow-leave-from {
-  opacity: 1;
-}
 </style>
