@@ -1,7 +1,19 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import WalletSelect from '../components/WalletSelect.vue'
 
+onMounted(() => {
+  setTimeout(() => {
+    showGlow.value = true
+  }, 300);
+})
+
+onUnmounted(() => showGlow.value = false)
+
+// GLOW DE FUNDO
+const showGlow = ref(false)
+
+// WALLET
 const walletOpen = ref(false)
 
 const openWalletModal = () => {
@@ -15,10 +27,44 @@ const closeWalletModal = () => {
 </script>
 
 <template>
+  <Transition name="glow">
+    <div v-show="showGlow" class="
+     absolute flex
+     w-[100%] h-[100%] 
+     justify-center items-center
+    ">
+      <div class="
+      w-[1px] h-[1px] z-1
+      rounded-full
+      opacity-60 
+      shadow-[0_0_100px_300px_#1c013f]
+      ">
+        
+      </div>
+    </div>
+  </Transition>
+
+  <Transition name="glow">
+    <div v-show="showGlow" class="
+     absolute flex
+     w-[100%] h-[100%] 
+     justify-center items-center
+    ">
+      <div class="
+      w-[1px] h-[1px] z-1
+      rounded-full
+      opacity-60 
+      shadow-[0_0_500px_700px_#1c013f]
+      ">
+        
+      </div>
+    </div>
+  </Transition>
+
   <div 
    class=" 
    relative flex flex-col items-center 
-   h-screen min-w-screen bg-[#000000ee]
+   h-screen min-w-screen bg-[#000000f9]
    p-9 pt-[75px]
    ">
 
@@ -32,7 +78,7 @@ const closeWalletModal = () => {
       relative flex
       flex-col gap-5
       text-start
-      w-[35%]
+      w-[35%] z-2
      "
     >
       <h1 class="relative w-[70%]">Own the Deal. Own the Token. Own the Power.</h1>
@@ -46,7 +92,7 @@ const closeWalletModal = () => {
 
     <div
      class="
-     
+      z-2
      "
     >
       <img
@@ -85,3 +131,20 @@ const closeWalletModal = () => {
     </Teleport>
   </div>
 </template>
+
+<style scoped>
+.glow-enter-active,
+.glow-leave-active {
+  transition: opacity ease 0.3s;
+}
+
+.glow-enter-from,
+.glow-leave-to {
+  opacity: 0;
+}
+
+.glow-enter-to,
+.glow-leave-from {
+  opacity: 1;
+}
+</style>
