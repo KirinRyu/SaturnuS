@@ -1,15 +1,6 @@
 <script lang="ts" setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref } from 'vue'
 import WalletSelect from '../components/WalletSelect.vue'
-
-onMounted(() => {
-  showGlow.value = true
-})
-
-onUnmounted(() => showGlow.value = false)
-
-// GLOW DE FUNDO
-const showGlow = ref(false)
 
 // WALLET
 const walletOpen = ref(false)
