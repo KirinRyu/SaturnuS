@@ -7,7 +7,7 @@ const walletOpen = ref(false)
 
 const openWalletModal = () => {
   walletOpen.value = true
-}
+} 
 
 const closeWalletModal = () => {
   walletOpen.value = false
@@ -25,6 +25,7 @@ const closeWalletModal = () => {
     w-[1px] h-[1px] z-1
     rounded-full
     shadow-[0_0_100px_100px_#240040]
+    lg:shadow-[0_0_80px_80pxpx_#240040]
     ">
     </div>
     <div class="
@@ -32,6 +33,7 @@ const closeWalletModal = () => {
     rounded-full
     opacity-60
     shadow-[0_0_500px_700px_#240040]
+    lg:shadow-[0_0_400px_500px_#240040]
     ">
     </div>
   </div>
