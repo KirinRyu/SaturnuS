@@ -6,7 +6,7 @@
     <div class="
      px-15 pt-5
      fixed top-0 left-0
-     h-[60px] w-full z-10
+     h-[60px] w-full z-100
      bg-transparent text-gray-50
      flex items-center justify-between
     ">
@@ -22,7 +22,7 @@
         <router-link
             to="/tokens"
         >
-            <img src="../assets/img/venerius-navbar.png" 
+            <img src="../assets/img/venerius-escuro.png" 
             class="w-9 h-auto cursor-pointer 
             relative rounded-[100%]
             hover:shadow-[0_0_60px_40px_#24004f]
