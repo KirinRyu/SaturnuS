@@ -25,7 +25,7 @@ const closeWalletModal = () => {
     w-[1px] h-[1px] z-1
     rounded-full
     shadow-[0_0_100px_100px_#240040]
-    lg:shadow-[0_0_80px_80pxpx_#240040]
+    lg:shadow-[0_0_80px_80px_#240040]
     ">
     </div>
     <div class="

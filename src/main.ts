@@ -6,10 +6,11 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-import { faCartShopping, faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { faAnglesDown, faCartShopping, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faCartShopping)
 library.add(faChevronRight)
+library.add(faAnglesDown)
 
 const app = createApp(App)
 
