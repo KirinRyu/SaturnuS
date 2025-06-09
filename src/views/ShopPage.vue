@@ -48,37 +48,37 @@ import BgGlow from '../components/BgGlow.vue';
     
                 <div class="grid grid-cols-3 grid-rows-2 gap-x-20 gap-y-10 mt-20! max-2xl:mt-10!">
                     <div class=" gift-cards">
-                        <img src="../assets/img/products/gpstore.jpg" alt="">
+                        <img class="img-card" src="../assets/img/products/gpstore.jpg" alt="">
                         <span>Google Play Store Gift Card</span>
                         <div class="flex gap-1">
-                            <img src="../assets/img/venerius-navbar.png" class="h-[20px]! w-[20px]!" alt="">
+                            <img class="venerius-img" src="../assets/img/venerius-claro.png" alt="">
                             <span>XX $</span>
                         </div>
                     </div>
 
                     <div class=" gift-cards">
-                        <img src="../assets/img/products/applegc.jpg" alt="">
+                        <img class="img-card" src="../assets/img/products/applegc.jpg" alt="">
                         <span>Apple Gift Card</span>
                         <div class="flex gap-1">
-                            <img src="../assets/img/venerius-navbar.png" class="h-[20px]! w-[20px]!" alt="">
+                            <img class="venerius-img" src="../assets/img/venerius-claro.png" alt="">
                             <span>XX $</span>
                         </div>
                     </div>
 
                     <div class=" gift-cards">
-                        <img src="../assets/img/products/psncard.jpeg" alt="">
+                        <img class="img-card" src="../assets/img/products/psncard.jpeg" alt="">
                         <span>PlayStation Gift Card</span>
                         <div class="flex gap-1">
-                            <img src="../assets/img/venerius-navbar.png" class="h-[20px]! w-[20px]!" alt="">
+                            <img class="venerius-img" src="../assets/img/venerius-claro.png" alt="">
                             <span>XX $</span>
                         </div>
                     </div>
 
                     <div class=" gift-cards">
-                        <img src="../assets/img/products/spotifygc.png" alt="">
+                        <img class="img-card" src="../assets/img/products/spotifygc.png" alt="">
                         <span>Spotify Gift Card</span>
                         <div class="flex gap-1">
-                            <img src="../assets/img/venerius-navbar.png" class="h-[20px]! w-[20px]!" alt="">
+                            <img class="venerius-img" src="../assets/img/venerius-claro.png" alt="">
                             <span>XX $</span>
                         </div>
                     </div>
@@ -104,10 +104,15 @@ import BgGlow from '../components/BgGlow.vue';
     padding: 20px;
 }
 
-.gift-cards img {
+.gift-cards .img-card {
     width: 300px;
     height: auto;
     border-radius: 20px;
+}
+
+.gift-cards .venerius-img {
+    width: 20px;
+    height: 20px;
 }
 
 @media screen and (max-width: 1540px) {
@@ -116,7 +121,7 @@ import BgGlow from '../components/BgGlow.vue';
         height: 230px;
     }
 
-    .gift-cards img {
+    .gift-cards .img-card {
         width: 200px !important;
         height: 120px;
     }
