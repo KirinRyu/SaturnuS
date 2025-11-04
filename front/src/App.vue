@@ -5,14 +5,14 @@ import NavBar from './components/NavBar.vue';
 /*
   Focar no Operacional, ou seja, criar os produtos e toda a interface de e-commerce.
 
-  A partir do momento que a pessoa conectar sua carteira no site, 
+  A partir do momento que a pessoa conectar sua carteira no site,
   não precisa de mais nada pra comprar tokens.
-  
+
 */
 </script>
 
 <template>
-  
+
   <NavBar />
 
   <Transition
@@ -22,9 +22,9 @@ import NavBar from './components/NavBar.vue';
   </Transition>
 </template>
 
-<style> 
-.fade-enter-active, .fade-leave-active { 
-  transition: opacity 0.3s ease-in; 
+<style>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.3s ease-in-out;
 }
 
 .fade-enter-from, .fade-leave-to {
