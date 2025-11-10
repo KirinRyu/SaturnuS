@@ -26,8 +26,7 @@ const props = defineProps({
 type Opcao = {
     id: number,
     image: string,
-    nome: string,
-    site: string
+    nome: string
 }
 
 // Será usado para fechar a tela ao clicar fora do Modal
@@ -64,14 +63,14 @@ const connectWallet = async () => {
 
     if(!window.cardano) 
         if (!window.cardano.eternl) {
-        alert("Carteira nao encontrada no navegador!")
-        isLoading.value = false;
+        console.log("Carteira nao encontrada no navegador!")
+        loading.value = false;
         return;
     }
 
     if (!window.cardano.eternl) {
         alert("Carteira Eternl não encontrada!");
-        isLoading.value = false;
+        loading.value = false;
         return;
     }
 
