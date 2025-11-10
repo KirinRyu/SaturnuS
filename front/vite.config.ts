@@ -13,6 +13,21 @@ export default defineConfig({
     vueDevTools(),
     tailwindcss()
   ],
+  build: {
+    target: 'es2022'
+  },
+  esbuild: {
+    target: 'es2022'
+  },
+  optimizeDeps: {
+    esbuildOptions: {
+      target: 'es2022'
+    },
+    exclude: [
+      '@emurgo/cardano-serialization-lib-asm',
+      'lucid-cardano'
+    ]
+  },
   server: {
     port: 3000
   },

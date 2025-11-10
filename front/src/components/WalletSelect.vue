@@ -1,12 +1,18 @@
 <script lang="ts" setup>
-import coin98Img from '@/assets/img/imgOptions/coin98.png'
-import braveImg from '@/assets/img/imgOptions/brave.png'
-import exodusImg from '@/assets/img/imgOptions/exodus.png'
+import eternlImg from '@/assets/img/imgOptions/eternl.png'
 
 import { onUnmounted, ref } from 'vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import { onClickOutside } from '@vueuse/core';
+import { Lucid, Blockfrost } from 'lucid-cardano';
+
+const lucid = ref<Lucid | null>(null); // instancia do Lucid
+const walletAddress = ref<string | null>(null);
+const loading = ref<boolean>(false);
+
+const BLOCKFROST_ID = 'preprod8NCRGEehauHVxMlfAu2bIaXN3df8tYtA'
+const NETWORK = "Preprod"
 
 onUnmounted(() => {
     selectedOption.value = null
@@ -33,22 +39,9 @@ const selectedOption = ref<Opcao | undefined>()
 const opcoes : Opcao[] = [
     {
         id: 1,
-        image: braveImg,
-        nome: "Brave",
-        site: 'brave://wallet/crypto/onboarding/welcome'
+        image: eternlImg,
+        nome: "Eternl"
     },
-    {
-        id: 2,
-        image: exodusImg,
-        nome: "Exodus",
-        site: 'https://www.exodus.com/web3-wallet/'
-    },
-    {
-        id: 3,
-        image: coin98Img,
-        nome: "COIN98",
-        site: 'https://coin98.com/'
-    }
 ]
 
 const toggleDropdown = () => {
@@ -61,9 +54,47 @@ const selectOption = (opt : Opcao) => {
     dropdown.value = false
 }
 
-const connectWallet = () => {
-    if(selectedOption.value) {
-        window.open(selectedOption.value.site, '_blank')
+const connectWallet = async () => {
+    loading.value = true
+
+    if(!selectedOption.value) {
+        alert("Escolha uma Wallet antes de se conectar!")
+        return
+    }
+
+    if(!window.cardano) 
+        if (!window.cardano.eternl) {
+        alert("Carteira nao encontrada no navegador!")
+        isLoading.value = false;
+        return;
+    }
+
+    if (!window.cardano.eternl) {
+        alert("Carteira Eternl não encontrada!");
+        isLoading.value = false;
+        return;
+    }
+
+    try {
+        const walletApi = await window.cardano.eternl.enable(); // pede para a wallet ser habilitada -> retorna a api pronta pra uso
+
+        if (!lucid.value) {
+            lucid.value = await Lucid.new(
+                new Blockfrost(
+                    `https://cardano-${NETWORK.toLowerCase()}.blockfrost.io/api/v0`,
+                    BLOCKFROST_ID
+                ), NETWORK
+            )
+        }
+        lucid.value.selectWallet(walletApi);
+
+        walletAddress.value = await lucid.value.wallet.address();
+        console.log("Carteira conectada! Endereço:", walletAddress.value);
+
+    } catch (err) {
+        console.log("erro ao conectar à carteira: ", err)
+    } finally {
+        loading.value = false
     }
 }
 </script>
